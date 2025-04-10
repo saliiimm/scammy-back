@@ -8,6 +8,7 @@ import { ProductModule } from './product/product.module';
   imports: [
     ConfigModule.forRoot({
       envFilePath: '.env',
+      isGlobal: true,
     }),
     MongooseModule.forRoot(`${process.env.DB_LINK}`),
     ProductModule,

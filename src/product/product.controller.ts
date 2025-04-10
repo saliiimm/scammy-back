@@ -10,6 +10,16 @@ export class ProductController {
     const { name } = body;
     console.log(name);
     const product = await this.productService.createProduct(body);
-    return { message: 'Product saved successfully!', product };
+    return {
+      message: 'Product processed successfully!',
+      product: {
+        name: product.name,
+        isScam: product.isScam,
+        remark : product.remark,
+        stats: product.stats,
+        images: product.images,
+        lastUpdated: product.lastUpdated,
+      },
+    };
   }
 }
